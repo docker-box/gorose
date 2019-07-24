@@ -1,4 +1,4 @@
-module main
+module www
 
 go 1.12
 
