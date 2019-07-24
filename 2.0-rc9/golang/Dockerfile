@@ -2,7 +2,7 @@ FROM golang:alpine
 
 # 作者
 LABEL maintainer="fizzday <fizzday@yeah.net>" \
-        Description="php7.3 alpine3.9"
+        Description="golang1.12 gorose2.0 alpine"
 
 # ########### 变量 ##############
 ENV TZ Asia/Shanghai
