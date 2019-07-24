@@ -12,9 +12,9 @@ ENV GO111MODULE on
 # ########## git ###########
 RUN apk add --no-cache git
 
-RUN mkdir -p /var/www && cd /var/www
+RUN mkdir -p /var/www
 COPY demo/* /var/www/
 
-RUN go mod tidy
+RUN cd /var/www && go mod tidy
 
 WORKDIR /var/www
