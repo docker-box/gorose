@@ -17,6 +17,6 @@ RUN apk add --no-cache git
 RUN mkdir -p /var/www
 COPY demo/* /var/www/
 
-RUN cd /var/www && go mod tidy
+RUN cd /var/www && go mod tidy && go run main.go
 
 WORKDIR /var/www
