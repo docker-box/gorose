@@ -10,6 +10,8 @@ ENV GOROSE_VERSION master
 ENV GO111MODULE on
 
 # ########## git ###########
+RUN apk add gcc
+RUN apk add libc-dev
 RUN apk add --no-cache git
 
 RUN mkdir -p /var/www
