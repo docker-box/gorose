@@ -1,22 +1,24 @@
 FROM golang:alpine
 
-# 作者
+# ############## author ##############
 LABEL maintainer="fizzday <fizzday@yeah.net>" \
-        Description="golang1.12 gorose2.0 alpine"
+        Description="golang gorose alpine | latest"
 
-# ########### 变量 ##############
+# ############## env ##############
 ENV TZ Asia/Shanghai
 ENV GOROSE_VERSION master
 ENV GO111MODULE on
 
-# ########## git ###########
+# ############## golang dependency ###########
 RUN apk add gcc
 RUN apk add libc-dev
 RUN apk add --no-cache git
 
+# ############## work dir ###########
 RUN mkdir -p /var/www
 COPY demo/* /var/www/
 
+# ############## gorose init & run for once ###########
 RUN cd /var/www && go mod tidy && go run main.go
 
 WORKDIR /var/www
